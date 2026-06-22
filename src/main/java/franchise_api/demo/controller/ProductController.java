@@ -28,13 +28,16 @@ public class ProductController {
 
     @DeleteMapping("/{productId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long productId) {
+    public void delete(
+            @PathVariable Long branchId,
+            @PathVariable Long productId) {
 
         productService.delete(productId);
     }
 
     @PatchMapping("/{productId}/stock")
     public Product updateStock(
+            @PathVariable Long branchId,
             @PathVariable Long productId,
             @Valid @RequestBody UpdateStockRequest request) {
 
@@ -43,6 +46,7 @@ public class ProductController {
 
     @PatchMapping("/{productId}")
     public Product updateName(
+            @PathVariable Long branchId,
             @PathVariable Long productId,
             @Valid @RequestBody UpdateNameRequest request) {
 

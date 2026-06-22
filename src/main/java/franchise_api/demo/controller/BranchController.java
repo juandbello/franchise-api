@@ -27,6 +27,7 @@ public class BranchController {
 
     @PatchMapping("/{branchId}")
     public Branch updateName(
+            @PathVariable Long franchiseId,
             @PathVariable Long branchId,
             @Valid @RequestBody UpdateNameRequest request) {
 

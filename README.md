@@ -159,3 +159,28 @@ El archivo generado estará disponible en:
 ```text
 target/
 ```
+
+## API desplegada en la nube
+
+La aplicación se encuentra desplegada en Railway y puede ser accedida mediante la siguiente URL:
+
+### Swagger UI
+
+https://franchise-api-production-818e.up.railway.app/swagger-ui/index.html
+
+### URL Base de la API
+
+https://franchise-api-production-818e.up.railway.app
+
+La documentación interactiva de Swagger permite probar todos los endpoints directamente desde el navegador sin necesidad de herramientas adicionales como Postman.
+
+## Despliegue
+
+La aplicación se encuentra desplegada utilizando:
+
+* Railway
+* PostgreSQL gestionado por Railway
+* Docker
+* Spring Boot 3
+* Java 21
+

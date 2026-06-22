@@ -1,0 +1,29 @@
+services:
+
+  postgres:
+    image: postgres:17
+    container_name: franchise-postgres
+
+    environment:
+      POSTGRES_DB: franchise_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    container_name: franchise-api
+
+    ports:
+      - "8080:8080"
+
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
